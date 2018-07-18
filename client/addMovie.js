@@ -5,6 +5,7 @@ window.onload = function () {
         e.preventDefault();//preventDefault() 方法阻止元素发生默认的行为（例如，当点击提交按钮时阻止对表单的提交）。
         const movieData = getMovieData("addMovie");
         console.log(movieData)
+
        axios.post('http://localhost:3000/movies', movieData)
             .then(function (response) {
                 if (response.data) {
@@ -17,6 +18,7 @@ window.onload = function () {
             });
     }, false);
 }
+
 function getMovieData(formId) {
     const form = document.getElementById(formId);
     let tagElements = form.getElementsByTagName('input');
@@ -25,4 +27,5 @@ function getMovieData(formId) {
         movieData[item.name] = item.value;
     }
     return movieData;
+  
 }

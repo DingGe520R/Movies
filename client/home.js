@@ -33,6 +33,7 @@ function handleDeleteMovieClick(e){
         else return;
     }else return;
 }
+
 function deleteMovieById(movieId){  //删除操作
     axios.delete(` http://localhost:3000/movies/${movieId}`)
     .then(function(response){
